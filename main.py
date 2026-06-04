@@ -1,5 +1,6 @@
 from src.cli import run
 
+
 def main():
     run()
 

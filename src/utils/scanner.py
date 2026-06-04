@@ -1,6 +1,5 @@
 from pathlib import Path
 
-
 IGNORE_DIRS = {
     ".git",
     "venv",
