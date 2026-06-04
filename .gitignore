@@ -16,7 +16,7 @@ venv/
 .mypy_cache/
 .ruff_cache/
 
-reports/
+/reports/
 
 .pytest_cache/
 .coverage
