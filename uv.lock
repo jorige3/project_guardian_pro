@@ -392,27 +392,25 @@ version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
     { name = "click" },
-    { name = "pytest" },
 ]
 
 [package.dev-dependencies]
 dev = [
     { name = "black" },
     { name = "mypy" },
+    { name = "pytest" },
     { name = "pytest-cov" },
     { name = "ruff" },
 ]
 
 [package.metadata]
-requires-dist = [
-    { name = "click", specifier = ">=8.4.1" },
-    { name = "pytest", specifier = ">=9.0.3" },
-]
+requires-dist = [{ name = "click", specifier = ">=8.4.1" }]
 
 [package.metadata.requires-dev]
 dev = [
     { name = "black", specifier = ">=26.5.1" },
     { name = "mypy", specifier = ">=2.1.0" },
+    { name = "pytest", specifier = ">=9.0.3" },
     { name = "pytest-cov", specifier = ">=7.1.0" },
     { name = "ruff", specifier = ">=0.15.16" },
 ]
