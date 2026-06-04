@@ -5,6 +5,9 @@ from src.analyzers.security_analyzer import SecurityAnalyzer
 from src.analyzers.project_stats import ProjectStatsAnalyzer
 from src.analyzers.health_score import HealthScore
 from src.reports.markdown_report import generate_report
+from src.utils.logger import setup_logger
+
+logger = setup_logger()
 
 
 @click.command()
@@ -13,6 +16,9 @@ def run(project_path: str) -> None:
     """
     Analyze a project and generate a report.
     """
+    logger.info(
+        f"Starting scan for {project_path}"
+    )
 
     click.echo("Project Guardian Pro")
     click.echo("=" * 40)
@@ -20,6 +26,10 @@ def run(project_path: str) -> None:
     click.echo(f"Scanning: {project_path}")
 
     files = scan_project(project_path)
+    
+    logger.info(
+        f"Files scanned: {len(files)}"
+    )
 
     security_analyzer = SecurityAnalyzer()
     security_findings = security_analyzer.analyze(files)
@@ -35,7 +45,11 @@ def run(project_path: str) -> None:
         project_path,
         security_findings,
     )
-
+ 
+    logger.info(
+        f"Report generated: {report_path}"
+    )
+ 
     click.echo("")
     click.echo("Project Statistics")
     click.echo("-" * 20)
