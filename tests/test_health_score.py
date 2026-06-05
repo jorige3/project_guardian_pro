@@ -1,4 +1,4 @@
-from src.analyzers.health_score import (
+from guardian.analyzers.health_score import (
     HealthScore,
 )
 
