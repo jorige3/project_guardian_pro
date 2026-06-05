@@ -1,4 +1,4 @@
-from src.cli import run
+from guardian.cli import run
 
 def test_cli_import():
     assert run is not None

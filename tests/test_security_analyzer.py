@@ -1,4 +1,4 @@
-from src.analyzers.security_analyzer import (
+from guardian.analyzers.security_analyzer import (
     SecurityAnalyzer,
 )
 

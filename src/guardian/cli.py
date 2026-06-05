@@ -1,11 +1,11 @@
 import click
 
-from src.utils.scanner import scan_project
-from src.analyzers.security_analyzer import SecurityAnalyzer
-from src.analyzers.project_stats import ProjectStatsAnalyzer
-from src.analyzers.health_score import HealthScore
-from src.reports.markdown_report import generate_report
-from src.utils.logger import setup_logger
+from guardian.utils.scanner import scan_project
+from guardian.analyzers.security_analyzer import SecurityAnalyzer
+from guardian.analyzers.project_stats import ProjectStatsAnalyzer
+from guardian.analyzers.health_score import HealthScore
+from guardian.reports.markdown_report import generate_report
+from guardian.utils.logger import setup_logger
 
 logger = setup_logger()
 

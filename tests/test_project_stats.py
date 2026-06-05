@@ -1,4 +1,4 @@
-from src.analyzers.project_stats import (
+from guardian.analyzers.project_stats import (
     ProjectStatsAnalyzer,
 )
 

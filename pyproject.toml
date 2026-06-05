@@ -4,9 +4,13 @@ version = "0.1.0"
 description = "Automated Python project analysis tool with security scanning, project statistics, health scoring, and reporting."
 readme = "README.md"
 requires-python = ">=3.11"
+
 dependencies = [
     "click>=8.4.1",
 ]
+
+[project.scripts]
+guardian = "guardian.cli:run"
 
 [dependency-groups]
 dev = [
@@ -16,11 +20,24 @@ dev = [
     "pytest-cov>=7.1.0",
     "ruff>=0.15.16",
 ]
+
 [tool.black]
 target-version = ["py311"]
 line-length = 88
 
 [tool.mypy]
 python_version = "3.11"
-explicit_package_bases = true
-mypy_path = "."
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["guardian*"]
+
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[tool.uv]
+package = true
